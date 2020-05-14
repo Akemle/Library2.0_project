@@ -1,0 +1,12 @@
+C:\Users\akemle\Documents\Library2.0\Library2.0\bin\Debug\Library2.0.exe.config
+C:\Users\akemle\Documents\Library2.0\Library2.0\bin\Debug\Library2.0.exe
+C:\Users\akemle\Documents\Library2.0\Library2.0\bin\Debug\Library2.0.pdb
+C:\Users\akemle\Documents\Library2.0\Library2.0\bin\Debug\Dapper.dll
+C:\Users\akemle\Documents\Library2.0\Library2.0\bin\Debug\Dapper.xml
+C:\Users\akemle\Documents\Library2.0\Library2.0\obj\Debug\Library2.0.csprojAssemblyReference.cache
+C:\Users\akemle\Documents\Library2.0\Library2.0\obj\Debug\Library2._0.Form1.resources
+C:\Users\akemle\Documents\Library2.0\Library2.0\obj\Debug\Library2._0.Properties.Resources.resources
+C:\Users\akemle\Documents\Library2.0\Library2.0\obj\Debug\Library2.0.csproj.GenerateResource.cache
+C:\Users\akemle\Documents\Library2.0\Library2.0\obj\Debug\Library2.0.csproj.CopyComplete
+C:\Users\akemle\Documents\Library2.0\Library2.0\obj\Debug\Library2.0.exe
+C:\Users\akemle\Documents\Library2.0\Library2.0\obj\Debug\Library2.0.pdb

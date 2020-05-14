@@ -54,12 +54,17 @@ namespace Library2._0
         {
 
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void DeleteBook_Click(object sender, EventArgs e)
         {
+            LibraryAccess db = new LibraryAccess();
+            //CONVERTENDO .Text para INT
+            int b_id = int.Parse(book_id.Text);
 
+            db.DeleteBook(b_id);
         }
 
-      
+     
+
+       
     }
 }

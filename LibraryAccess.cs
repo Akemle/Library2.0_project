@@ -12,6 +12,7 @@ namespace Library2._0.AcessMethods
 {
     public class LibraryAccess
     {
+        //Filtrar Livros
         public List<Book> GetBooks(string author_name)
         {
             // Filtrando os valores pedidos para serem mostrados 
@@ -19,12 +20,12 @@ namespace Library2._0.AcessMethods
             using (IDbConnection connection = new SqlConnection(LibraryConnection.Conn("LibraryDB")))
             {
                 var output = connection.Query<Book>($"SELECT * FROM Books WHERE book_author = '{author_name}'").ToList();
-                    return output;
-              
+                    return output; 
             }
 
         }
 
+        //Adicionar Livros
         public void AddBook(int book_id, string book_name, float book_price, int book_quant, string book_author)
         {
             try
@@ -50,8 +51,37 @@ namespace Library2._0.AcessMethods
             catch(SqlException)
             {
                 throw;
+            } 
+        }    
+        
+        public void UpdateBook()
+        {
+
+        }
+
+
+        public void DeleteBook(int book_id)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(LibraryConnection.Conn("LibraryDB")))
+                {
+                    connection.Open();
+                    using (SqlTransaction transaction = connection.BeginTransaction())
+                    {
+                        string query = $"DELETE FROM Books WHERE book_id = '{book_id}'";
+
+                        SqlCommand cmd = new SqlCommand(query, connection, transaction);
+                        cmd.ExecuteNonQuery();
+                        transaction.Commit();
+                    }
+                }
             }
-            
-        }       
+            catch (SqlException)
+            {
+                throw;
+            }
+
+        }
     }
 }

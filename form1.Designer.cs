@@ -101,6 +101,7 @@
             this.DeleteBook.TabIndex = 7;
             this.DeleteBook.Text = "Delete Book";
             this.DeleteBook.UseVisualStyleBackColor = true;
+            this.DeleteBook.Click += new System.EventHandler(this.DeleteBook_Click);
             // 
             // UpdateBook
             // 
@@ -158,7 +159,7 @@
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "Id*";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // label3
             // 

@@ -54,8 +54,31 @@ namespace Library2._0.AcessMethods
             } 
         }    
         
-        public void UpdateBook()
+        public void UpdateBook(int book_id, string book_name, float book_price, int book_quant, string book_author)
         {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(LibraryConnection.Conn("LibraryDB")))
+                {
+                    connection.Open();
+                    using (SqlTransaction transaction = connection.BeginTransaction())
+                    {
+                        string query = $"UPDATE Books SET book_name = '{book_name}' WHERE book_id = '{book_id}'" +
+                            $"UPDATE Books SET book_price = '{book_price}' WHERE book_id = '{book_id}'" +
+                            $"UPDATE Books SET book_quant = '{book_quant}' WHERE book_id = '{book_id}'" +
+                            $"UPDATE Books SET book_author = '{book_author}' WHERE book_id = '{book_id}'"
+                            ;
+
+                        SqlCommand cmd = new SqlCommand(query, connection, transaction);
+                        cmd.ExecuteNonQuery();
+                        transaction.Commit();
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
 
         }
 

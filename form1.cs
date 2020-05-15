@@ -28,7 +28,8 @@ namespace Library2._0
             BooksListBox.DataSource = books;
             BooksListBox.DisplayMember = "FullBook";
         }
-
+        
+        //FILTER
         private void SearchBook_Click(object sender, EventArgs e)
         {
             LibraryAccess db = new LibraryAccess();
@@ -37,6 +38,8 @@ namespace Library2._0
 
             UpdateBinding();
          }
+
+        //ADD
         private void AddBook_Click(object sender, EventArgs e)
         {
             LibraryAccess db = new LibraryAccess();
@@ -50,10 +53,18 @@ namespace Library2._0
            
         }
 
+        //UPDATE
         private void UpdateBook_Click(object sender, EventArgs e)
         {
+            LibraryAccess db = new LibraryAccess();
+            int b_id = int.Parse(book_id.Text);
+            float b_price = float.Parse(book_price.Text);
+            int b_quant = int.Parse(book_quant.Text);
 
+            db.UpdateBook(b_id, book_name.Text, b_price, b_quant, book_author.Text);
         }
+
+        //DELETE 
         private void DeleteBook_Click(object sender, EventArgs e)
         {
             LibraryAccess db = new LibraryAccess();
